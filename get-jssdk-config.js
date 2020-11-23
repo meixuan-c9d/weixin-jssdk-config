@@ -25,7 +25,7 @@ module.exports = promififyAsync(async (request, response, next) => {
   ].sort()
   const stringToHash = arrayKeys
     .map(key => `${key}=${config[key]}`)
-    .join('')
+    .join('&')
 
   const hash = crypto.createHash('sha1')
   hash.on('readable', () => {
