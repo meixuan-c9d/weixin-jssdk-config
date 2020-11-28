@@ -1,9 +1,9 @@
 const debug = require('./configs/debug')
 const crypto = require('crypto')
-const promififyAsync = require('./utils/promisify-async')
+const wrap = require('./utils/wrap')
 const { promisify } = require('util')
 
-module.exports = promififyAsync(async (request, response, next) => {
+module.exports = wrap(async (request, response, next) => {
   const cryptoRandomBytes = promisify(crypto.randomBytes)
   const nonceString = (await cryptoRandomBytes(16)).toString('hex')
   const jsAPITicket = request.params.jsAPITicket
