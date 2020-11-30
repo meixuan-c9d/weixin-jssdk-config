@@ -40,7 +40,7 @@ module.exports = wrap(async (request, response, next) => {
         appId: process.env.NODE_ENV === 'production'
           ? process.env.WEIXIN_APP_ID
           : process.env.WEIXIN_APP_ID_DEV,
-        jsAPIList: [
+        jsApiList: [
           'updateAppMessageShareData',
           'updateTimelineShareData'
         ]
