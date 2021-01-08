@@ -1,1 +1,1 @@
-module.exports = () => require('dotenv').config()
+module.exports = () => require('dotenv-flow').config()
